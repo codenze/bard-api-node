@@ -1,6 +1,6 @@
 {
   "name": "bard-api-node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Node.js library for interacting with Google Bard, an experimental conversational AI chat service powered by Google's Language Model for Dialogue Applications (LaMDA). Use this library to leverage the capabilities of Bard, including coding, math problem solving, and writing assistance.",
   "main": "src/index.js",
   "keywords": [
