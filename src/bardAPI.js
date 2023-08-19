@@ -5,7 +5,7 @@ class BardAPI {
   constructor() {
     this.timeout = 6000;
     this.proxies = null;
-    this.conversation_id = 'c_67887788a2c4ace8';
+    this.conversation_id = 'c_2d6e5d40d49e04c7';
     this.response_id = '';
     this.choice_id = '';
     this.session = axios.create();
@@ -67,8 +67,9 @@ class BardAPI {
     }
 
     const parsed_answer = JSON.parse(resp_dict);
+
     const bard_answer = {
-      content: parsed_answer[0][0],
+      content: parsed_answer[4][0][1][0],
       conversation_id: parsed_answer[1][0],
       response_id: parsed_answer[1][1],
       factualityQueries: parsed_answer[3],
