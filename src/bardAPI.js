@@ -44,6 +44,10 @@ class BardAPI {
   }
 
   async getBardResponse(input_text) {
+    if (!this.data.at) {
+      return {content: "Authentication Error! Please make sure to initialize with the correct __Secure-1PSID or __Secure-3PSID value. Check your credentials and try again."};
+    }
+
     let req_id = parseInt(Math.random().toString().slice(2, 6));
 
     const input_text_struct = [
@@ -96,13 +100,17 @@ class BardAPI {
         throw new Error(`Response Status: ${response.status}`);
       }
 
+      if (!response.headers['set-cookie']) {
+        throw new Error("Invalid __Secure-1PSID or __Secure-3PSID value. Please ensure you provide a valid __Secure-1PSID or __Secure-3PSID value.");
+      }
+
       const regex = /SNlM0e":"(.*?)"/;
       const match = response.data.match(regex);
 
       if (match) {
         this.data.at = match[1];
       } else {
-        throw new Error("Pattern not found.");
+        throw new Error("Failed to retrieve SNlM0e pattern. Please ensure you provide a valid __Secure-1PSID or __Secure-3PSID value.");
       }
     } catch (error) {
       console.error(error);
