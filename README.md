@@ -1,5 +1,5 @@
 # Bard-API-Node (Updated for Gemini API)
-![image](https://techviral.net/wp-content/uploads/2024/02/Google-Rebrands-Its-AI-Chatbot-Bard-As-_Gemini_.png)
+![Bard-API-Node](https://techviral.net/wp-content/uploads/2024/02/Google-Rebrands-Its-AI-Chatbot-Bard-As-_Gemini_.png)
 ## Description
 **bard-api-node** is a Node.js library for interacting with Bard, an AI Chatbot developed by Google. Bard is based on Google's Large language model (LLM), LaMDA, which is designed to generate human-like text and images in response to prompts. This updated version of the library is aligned with the launch of Gemini API, the successor to Bard, and integrates with the official Google API services.
 
