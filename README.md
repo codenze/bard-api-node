@@ -29,21 +29,17 @@ To get started with the Bard API, you need to obtain an API key from the Google 
    - Visit [Google Cloud Console](https://console.cloud.google.com/projectcreate).
    - Enter a project name of your choice.
    - Click on "Create" to create the project.
-
-   ![Create Project](placeholder_project_create.png)
+   -    <img width="854" alt="Screenshot 2024-03-01 at 10 15 19 PM" src="https://github.com/codenze/bard-api-node/assets/125561714/e35f763b-0447-4c82-aacd-1cc38518890c">
 
 3. **Visit Google Ai Studio for API Key**:
    - After creating the project, navigate to [API Key creation page](https://aistudio.google.com/app/apikey).
+   -    <img width="854" alt="Screenshot 2024-03-01 at 10 16 25 PM" src="https://github.com/codenze/bard-api-node/assets/125561714/311e3c4e-c1a7-4b47-9a27-0ac85cc6fda9">
    - Click on "Create API key".
    - Choose the project you just created from the dropdown menu labeled "Search Google Cloud projects".
+   - <img width="854" alt="Screenshot 2024-03-01 at 10 17 05 PM" src="https://github.com/codenze/bard-api-node/assets/125561714/272ab018-80f8-4e40-9dac-e7417360e780">
    - Click on "Create API key in exsisting project".
-
-   ![API Key Creation](placeholder_api_key_creation.png)
-
-   - Once API key generated, the API key will be displayed in a modal window.
    - Copy the API key.
-
-   ![Copy API Key](placeholder_copy_api_key.png)
+   - <img width="854" alt="Screenshot 2024-03-01 at 10 17 27 PM" src="https://github.com/codenze/bard-api-node/assets/125561714/70549631-ecbb-46f1-8546-76d51cba0dab">
 
 5. **Paste API Key into Code**:
    - Paste the API key into your code to initialize the BardAPI object.
