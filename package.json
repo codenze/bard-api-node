@@ -1,6 +1,6 @@
 {
   "name": "bard-api-node",
-  "version": "1.3.2",
+  "version": "2.0.0",
   "description": "A Node.js library harnessing the power of Bard's Large Language Model (LLM) for seamless chat experiences and streamlined accessibility to Google's Gemini. Empower your applications with advanced conversational AI, leveraging Bard's LLM to answer questions, generate responses, facilitate coding tasks, and more.",
   "main": "index.js",
   "keywords": [
