@@ -6,7 +6,21 @@ const {
 
 class BardAPI {
   constructor() {
-    this.safetySettings = [
+    this.safetySettings;
+    this.generationConfig;
+    this.chat;
+    this.defultSettings();
+  }
+
+  defultSettings() {
+    const generationConfig = {
+      temperature: 0.9,
+      topK: 1,
+      topP: 1,
+      maxOutputTokens: 2048,
+    };
+
+    const securitySettings = [
       {
         category: HarmCategory.HARM_CATEGORY_HARASSMENT,
         threshold: HarmBlockThreshold.BLOCK_NONE,
@@ -24,18 +38,26 @@ class BardAPI {
         threshold: HarmBlockThreshold.BLOCK_NONE,
       },
     ];
-    this.generationConfig = {
-      temperature: 0.9,
-      topK: 1,
-      topP: 1,
-      maxOutputTokens: 2048,
-    };
-    this.chat;
+
+    this.setResponseGenerationConfig(generationConfig);
+    this.setSafetySettings(securitySettings);
   }
 
-   initializeChat(apiKey) {
+  setResponseGenerationConfig(generationConfig = null) {
+    if (generationConfig) {
+      this.generationConfig = generationConfig;
+    }
+  }
+
+  setSafetySettings(securitySettings = null) {
+    if (securitySettings) {
+      this.safetySettings = securitySettings;
+    }
+  }
+
+  initializeChat(apiKey) {
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
     this.chat = model.startChat({
       generationConfig: this.generationConfig,
       safetySettings: this.safetySettings,
@@ -43,7 +65,7 @@ class BardAPI {
   }
 
   async getBardResponse(input) {
-    let bard_answer = { response: {}, text: "" };
+    let bard_answer = { response: {}, text: '' };
     try {
       const result = await this.chat.sendMessage(input);
       const response = result.response;
